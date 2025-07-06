@@ -69,7 +69,7 @@ export function AboutHero() {
               </div>
               {/* Enhanced decorative elements */}
               <div className="absolute -top-6 -right-6 h-80 w-72 rounded-3xl bg-gradient-to-br from-primary/20 to-primary/5 -z-10 blur-sm" />
-              <div className="absolute -bottom-6 -left-6 h-80 w-72 rounded-3xl bg-gradient-to-tr from-secondary/30 to-secondary/10 -z-10 blur-sm" />
+              {/* <div className="absolute -bottom-6 -left-6 h-80 w-72 rounded-3xl bg-gradient-to-tr from-secondary/30 to-secondary/10 -z-10 blur-sm" /> */}
               {/* Additional accent element */}
               <div className="absolute top-4 right-4 h-4 w-4 rounded-full bg-primary/60 animate-pulse" />
             </div>
