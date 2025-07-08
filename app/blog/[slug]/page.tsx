@@ -2,6 +2,9 @@ import { notFound } from 'next/navigation'
 import { BlogPost } from '@/components/sections/BlogPost'
 import { getBlogPost, getAllBlogPosts } from '@/lib/blog-supabase'
 
+// Force dynamic rendering to prevent build-time static generation
+export const dynamic = 'force-dynamic'
+
 interface BlogPostPageProps {
   params: {
     slug: string
@@ -53,29 +56,6 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
 }
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
-  // Check if environment variables are available (build vs runtime)
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  
-  // During build time, environment variables may not be available
-  // In this case, we'll return a loading state or minimal content
-  if (!supabaseUrl || !supabaseAnonKey) {
-    // This is likely build time - return minimal structure
-    // The page will work properly at runtime when env vars are available
-    return (
-      <div className="min-h-screen bg-background">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center py-20">
-              <h1 className="text-3xl font-bold">Loading...</h1>
-              <p className="text-muted-foreground mt-4">Blog post content is loading.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    )
-  }
-
   const post = await getBlogPost(params.slug)
 
   if (!post) {
@@ -91,19 +71,8 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   )
 }
 
-export async function generateStaticParams() {
-  // Static list of blog post slugs for build-time generation
-  // This avoids needing to connect to Supabase during build
-  const slugs = [
-    'scalable-react-nextjs-14',
-    'microservices-nodejs-docker',
-    'advanced-typescript-patterns-better-code',
-    'state-management-react-redux-zustand-context',
-    'implementing-cicd-pipelines-github-actions',
-    'database-optimization-high-traffic-applications'
-  ]
-  
-  return slugs.map(slug => ({
-    slug
-  }))
-} 
+// Remove generateStaticParams to make pages dynamic and avoid build-time DB access
+// This ensures the pages are generated at request time, not build time
+// export async function generateStaticParams() {
+//   return []
+// } 

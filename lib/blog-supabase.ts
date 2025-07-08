@@ -1,4 +1,3 @@
-import { supabase } from './supabase'
 import { createClient } from '@supabase/supabase-js'
 import type { BlogPostData, BlogPostMeta, BlogSection } from '@/types'
 
@@ -67,11 +66,17 @@ function transformToBlogPostMeta(post: any): BlogPostMeta {
 // Get all blog posts metadata
 export async function getAllBlogPosts(): Promise<BlogPostMeta[]> {
   try {
+    // Check if environment variables are available
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    
+    if (!supabaseUrl || !supabaseAnonKey) {
+      console.log('Supabase environment variables not available (likely build time)')
+      return []
+    }
+
     // Create fresh client instance for reliable server-side execution
-    const freshClient = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    )
+    const freshClient = createClient(supabaseUrl, supabaseAnonKey)
     
     const { data, error } = await freshClient
       .from('blog_posts')
@@ -93,11 +98,17 @@ export async function getAllBlogPosts(): Promise<BlogPostMeta[]> {
 // Get a single blog post with its sections
 export async function getBlogPost(slug: string): Promise<BlogPostData | null> {
   try {
+    // Check if environment variables are available
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    
+    if (!supabaseUrl || !supabaseAnonKey) {
+      console.log('Supabase environment variables not available (likely build time)')
+      return null
+    }
+
     // Create fresh client instance for reliable server-side execution
-    const freshClient = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    )
+    const freshClient = createClient(supabaseUrl, supabaseAnonKey)
 
     // Get the blog post
     const { data: post, error: postError } = await freshClient
@@ -133,7 +144,18 @@ export async function getBlogPost(slug: string): Promise<BlogPostData | null> {
 // Get blog post metadata by slug
 export async function getBlogPostMeta(slug: string): Promise<BlogPostMeta | null> {
   try {
-    const { data, error } = await supabase
+    // Check if environment variables are available
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    
+    if (!supabaseUrl || !supabaseAnonKey) {
+      console.log('Supabase environment variables not available (likely build time)')
+      return null
+    }
+
+    const freshClient = createClient(supabaseUrl, supabaseAnonKey)
+    
+    const { data, error } = await freshClient
       .from('blog_posts')
       .select('slug, title, subtitle, date, read_time, tags, excerpt')
       .eq('slug', slug)
@@ -154,7 +176,18 @@ export async function getBlogPostMeta(slug: string): Promise<BlogPostMeta | null
 // Get featured blog posts
 export async function getFeaturedBlogPosts(): Promise<BlogPostMeta[]> {
   try {
-    const { data, error } = await supabase
+    // Check if environment variables are available
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    
+    if (!supabaseUrl || !supabaseAnonKey) {
+      console.log('Supabase environment variables not available (likely build time)')
+      return []
+    }
+
+    const freshClient = createClient(supabaseUrl, supabaseAnonKey)
+    
+    const { data, error } = await freshClient
       .from('blog_posts')
       .select('slug, title, subtitle, date, read_time, tags, excerpt')
       .eq('featured', true)
@@ -175,7 +208,18 @@ export async function getFeaturedBlogPosts(): Promise<BlogPostMeta[]> {
 // Get blog posts by tag
 export async function getBlogPostsByTag(tag: string): Promise<BlogPostMeta[]> {
   try {
-    const { data, error } = await supabase
+    // Check if environment variables are available
+    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+    const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+    
+    if (!supabaseUrl || !supabaseAnonKey) {
+      console.log('Supabase environment variables not available (likely build time)')
+      return []
+    }
+
+    const freshClient = createClient(supabaseUrl, supabaseAnonKey)
+    
+    const { data, error } = await freshClient
       .from('blog_posts')
       .select('slug, title, subtitle, date, read_time, tags, excerpt')
       .contains('tags', [tag])

@@ -2,6 +2,9 @@
 import type { Metadata } from 'next'
 import { BlogList } from '@/components/sections/BlogList'
 
+// Force dynamic rendering to prevent build-time static generation
+export const dynamic = 'force-dynamic'
+
 export const metadata: Metadata = {
   title: 'Blog - Ronak Patel',
   description: 'Technical articles and insights about software engineering, web development, and technology trends from Ronak Patel.',
