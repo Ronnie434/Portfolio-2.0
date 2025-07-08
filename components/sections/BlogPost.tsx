@@ -456,7 +456,7 @@ export function BlogPost({ post }: BlogPostProps) {
           </div>
           <div className="flex items-center">
             <Users className="h-4 w-4 mr-2" />
-            {post.audience.join(', ')}
+            {post.audience?.join(', ') || 'General Audience'}
           </div>
         </div>
         

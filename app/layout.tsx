@@ -9,6 +9,7 @@ import { Footer } from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: 'Ronak Patel - Senior Software Engineer',
   description: 'Full-stack developer specializing in Next.js, React, Node.js, and modern web technologies. Building scalable applications with clean architecture.',
   keywords: ['Software Engineer', 'Full Stack Developer', 'Next.js', 'React', 'Node.js', 'TypeScript', 'MongoDB', 'SQL'],

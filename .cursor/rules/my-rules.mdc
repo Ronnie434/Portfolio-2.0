@@ -1,0 +1,6 @@
+---
+description:Do not push or commit any changes to GitHub until I explicitly ask for it. 
+globs:
+alwaysApply: true
+---
+

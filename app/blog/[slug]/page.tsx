@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { BlogPost } from '@/components/sections/BlogPost'
-import { getBlogPost } from '@/lib/blog-data'
+import { getBlogPost, getAllBlogPosts } from '@/lib/blog-supabase'
 
 interface BlogPostPageProps {
   params: {
@@ -9,7 +9,7 @@ interface BlogPostPageProps {
 }
 
 export async function generateMetadata({ params }: BlogPostPageProps) {
-  const post = getBlogPost(params.slug)
+  const post = await getBlogPost(params.slug)
   
   if (!post) {
     return {
@@ -23,8 +23,8 @@ export async function generateMetadata({ params }: BlogPostPageProps) {
   }
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = getBlogPost(params.slug)
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const post = await getBlogPost(params.slug)
 
   if (!post) {
     notFound()
@@ -39,13 +39,9 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   )
 }
 
-export function generateStaticParams() {
-  return [
-    { slug: 'building-scalable-react-applications-nextjs-14' },
-    { slug: 'microservices-architecture-nodejs-docker' },
-    { slug: 'advanced-typescript-patterns-better-code' },
-    { slug: 'state-management-react-redux-zustand-context' },
-    { slug: 'implementing-cicd-pipelines-github-actions' },
-    { slug: 'database-optimization-high-traffic-applications' }
-  ]
+export async function generateStaticParams() {
+  const posts = await getAllBlogPosts()
+  return posts.map(post => ({
+    slug: post.slug
+  }))
 } 
