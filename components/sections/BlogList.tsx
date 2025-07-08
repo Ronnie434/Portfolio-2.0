@@ -6,64 +6,10 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { Calendar, Clock, ArrowRight } from 'lucide-react'
 import { formatDate } from '@/lib/utils'
-import type { BlogPost } from '@/types'
+import { getAllBlogPosts } from '@/lib/blog-data'
+import type { BlogPostMeta } from '@/types'
 
-const blogPosts: BlogPost[] = [
-  {
-    id: "1",
-    title: "Building Scalable React Applications with Next.js 14",
-    excerpt: "Learn how to leverage Next.js 14's new features to build performant and scalable React applications with the App Router, Server Components, and advanced caching strategies.",
-    content: "Full content would go here...",
-    date: "2024-01-15",
-    tags: ["Next.js", "React", "Performance"],
-    slug: "building-scalable-react-applications-nextjs-14"
-  },
-  {
-    id: "2",
-    title: "Microservices Architecture with Node.js and Docker",
-    excerpt: "A comprehensive guide to building and deploying microservices using Node.js, Docker, and Kubernetes. Learn best practices for service communication and data consistency.",
-    content: "Full content would go here...",
-    date: "2024-01-08",
-    tags: ["Node.js", "Docker", "Microservices"],
-    slug: "microservices-architecture-nodejs-docker"
-  },
-  {
-    id: "3",
-    title: "State Management in React: Redux vs Zustand vs Context",
-    excerpt: "Compare different state management solutions for React applications. When to use Redux, Zustand, or React Context, with practical examples and performance considerations.",
-    content: "Full content would go here...",
-    date: "2024-01-01",
-    tags: ["React", "State Management", "Redux"],
-    slug: "state-management-react-redux-zustand-context"
-  },
-  {
-    id: "4",
-    title: "Advanced TypeScript Patterns for Better Code",
-    excerpt: "Explore advanced TypeScript patterns and techniques that will make your code more type-safe, maintainable, and self-documenting. From utility types to conditional types.",
-    content: "Full content would go here...",
-    date: "2023-12-25",
-    tags: ["TypeScript", "JavaScript", "Code Quality"],
-    slug: "advanced-typescript-patterns-better-code"
-  },
-  {
-    id: "5",
-    title: "Database Optimization for High-Traffic Applications",
-    excerpt: "Learn database optimization techniques for handling high-traffic applications. Covering indexing strategies, query optimization, and database scaling patterns.",
-    content: "Full content would go here...",
-    date: "2023-12-18",
-    tags: ["Database", "Performance", "PostgreSQL"],
-    slug: "database-optimization-high-traffic-applications"
-  },
-  {
-    id: "6",
-    title: "Implementing CI/CD Pipelines with GitHub Actions",
-    excerpt: "Step-by-step guide to setting up robust CI/CD pipelines using GitHub Actions. Automated testing, deployment, and monitoring for modern web applications.",
-    content: "Full content would go here...",
-    date: "2023-12-11",
-    tags: ["DevOps", "GitHub Actions", "CI/CD"],
-    slug: "implementing-cicd-pipelines-github-actions"
-  }
-]
+const blogPosts = getAllBlogPosts()
 
 const allTags = Array.from(
   new Set(blogPosts.flatMap(post => post.tags))
@@ -109,7 +55,7 @@ export function BlogList() {
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {filteredPosts.map((post, index) => (
           <motion.article
-            key={post.id}
+            key={post.slug}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -120,7 +66,7 @@ export function BlogList() {
               <span>{formatDate(post.date)}</span>
               <span className="mx-2">•</span>
               <Clock className="h-4 w-4 mr-1" />
-              <span>5 min read</span>
+              <span>{post.readTime}</span>
             </div>
             
             <h2 className="text-xl font-semibold text-card-foreground mb-3 group-hover:text-primary transition-colors">

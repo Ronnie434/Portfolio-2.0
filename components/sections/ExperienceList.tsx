@@ -8,62 +8,62 @@ import type { Experience } from '@/types'
 const experiences: Experience[] = [
   {
     id: "1",
-    company: "TechCorp",
+    company: "Apple Inc.",
     position: "Senior Software Engineer",
-    duration: "2023 - Present",
-    description: "Leading a team of 6 engineers in developing next-generation cloud-native applications. Architected and implemented microservices solutions serving 500K+ users with 99.9% uptime. Mentored junior developers and established engineering best practices.",
-    tech: ["React", "Next.js", "Node.js", "TypeScript", "AWS", "Docker", "Kubernetes", "MongoDB"]
+    duration: "2020 - Present",
+    description: "Leading a team of 6 engineers, specializing in Next.js development, and mentoring junior developers. Architecting scalable solutions and implementing best practices for modern web applications.",
+    tech: ["Next.js", "React", "TypeScript", "Node.js", "AWS", "Docker", "Kubernetes", "MongoDB"]
   },
   {
     id: "2",
-    company: "InnovateTech",
-    position: "Full-Stack Developer",
-    duration: "2021 - 2023",
-    description: "Built and deployed multiple React/Node.js applications serving 100K+ users. Implemented CI/CD pipelines reducing deployment time by 60%. Improved application performance by 40% through optimization and caching strategies.",
-    tech: ["React", "Node.js", "Express", "PostgreSQL", "AWS", "Docker", "Jest", "TypeScript"]
+    company: "SCIF",
+    position: "React JS Developer (Freelancer)",
+    duration: "Jul 2019 - Nov 2020",
+    description: "Worked on an Agile (Scrum) Development Team delivering regular updates. Developed responsive React.js applications with Material Design components, implemented Redux for state management, and ensured cross-browser compatibility. Focused on accessibility standards following Section 508 and ADA compliance.",
+    tech: ["React.js", "Redux", "Material Design", "HTML5", "CSS3", "JavaScript", "jQuery", "Bootstrap", "SASS", "MongoDB"]
   },
   {
     id: "3",
-    company: "StartupXYZ",
-    position: "Tech Lead",
-    duration: "2020 - 2021",
-    description: "Led the development of a SaaS platform from MVP to $1M ARR. Managed a team of 4 developers and established engineering culture. Designed scalable architecture supporting 10x user growth.",
-    tech: ["Vue.js", "Node.js", "MongoDB", "Redis", "AWS", "Stripe", "GraphQL"]
+    company: "Dell Technologies",
+    position: "Frontend Developer",
+    duration: "Oct 2018 - Jul 2019",
+    description: "Created efficient user interaction screens using modern web technologies. Developed responsive websites for smart devices, implemented CI/CD pipelines with Jenkins, and collaborated with clients to refine software requirements. Worked extensively with Angular.js and RESTful services.",
+    tech: ["Angular.js", "HTML5", "CSS3", "JavaScript", "jQuery", "Node.js", "Jenkins", "MySQL", "AJAX", "JSON"]
   },
   {
     id: "4",
-    company: "DevSolutions",
-    position: "Software Engineer",
-    duration: "2019 - 2020",
-    description: "Developed scalable web applications using modern frameworks. Collaborated with cross-functional teams to deliver high-quality software on time. Implemented automated testing increasing code coverage to 95%.",
-    tech: ["React", "Node.js", "Express", "MySQL", "Docker", "Jest", "GitHub Actions"]
+    company: "Samsung Engineering",
+    position: "Frontend Developer",
+    duration: "May 2017 - Jun 2018",
+    description: "Converted design pages into responsive HTML, CSS, and JavaScript applications. Developed cross-platform web applications and mobile apps, analyzed UI/UX designs for improved usability, and collaborated with cross-functional teams throughout the development cycle.",
+    tech: ["HTML5", "CSS3", "JavaScript", "jQuery", "Responsive Design", "Cross-browser Development", "UI/UX"]
   },
   {
     id: "5",
-    company: "WebTech Agency",
-    position: "Junior Developer",
-    duration: "2017 - 2019",
-    description: "Started career building client websites and web applications. Learned full-stack development fundamentals and modern web technologies. Contributed to multiple successful project deliveries.",
-    tech: ["JavaScript", "HTML", "CSS", "PHP", "MySQL", "WordPress", "jQuery"]
+    company: "Gold coin multitrade limited",
+    position: "Software Engineer",
+    duration: "Jan 2016 - May 2017",
+    description: "Involved in complete SDLC including analysis, development, and implementation. Developed user interfaces using modern web technologies, created web authentication modules, and worked extensively with databases and eCommerce platforms. Administered Linux systems and managed server configurations.",
+    tech: ["AngularJS", "JavaScript", "HTML", "CSS", "jQuery", "Java Servlets", "JSP", "MySQL", "Linux", "Ajax", "JSON"]
   }
 ]
 
 const achievements = [
   {
-    metric: "500K+",
-    description: "Users served across applications"
+    metric: "8+",
+    description: "Years of professional experience"
   },
   {
-    metric: "99.9%",
-    description: "Application uptime achieved"
+    metric: "5+",
+    description: "Companies worked with"
   },
   {
-    metric: "15+",
-    description: "Developers mentored"
+    metric: "10+",
+    description: "Technologies mastered"
   },
   {
-    metric: "$1M",
-    description: "ARR growth contributed to"
+    metric: "50+",
+    description: "Projects delivered"
   }
 ]
 
@@ -150,15 +150,15 @@ export function ExperienceList() {
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             <div className="flex items-center justify-center p-4 rounded-lg bg-secondary">
               <Users className="h-5 w-5 text-primary mr-2" />
-              <span className="text-sm font-medium">Team Leadership</span>
+              <span className="text-sm font-medium">React.js, Next.js, & Frontend</span>
             </div>
             <div className="flex items-center justify-center p-4 rounded-lg bg-secondary">
               <TrendingUp className="h-5 w-5 text-primary mr-2" />
-              <span className="text-sm font-medium">Performance Optimization</span>
+              <span className="text-sm font-medium">Cross-browser Compatibility</span>
             </div>
             <div className="flex items-center justify-center p-4 rounded-lg bg-secondary">
               <MapPin className="h-5 w-5 text-primary mr-2" />
-              <span className="text-sm font-medium">Scalable Architecture</span>
+              <span className="text-sm font-medium">Responsive Design</span>
             </div>
           </div>
         </div>

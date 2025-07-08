@@ -43,7 +43,7 @@ export function AboutHero() {
               </div>
               <div className="flex items-center text-muted-foreground">
                 <Award className="h-5 w-5 mr-2" />
-                <span>AWS Certified Solutions Architect</span>
+                <span>Certified ReactJS Developer</span>
               </div>
             </div>
           </motion.div>

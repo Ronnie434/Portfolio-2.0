@@ -6,52 +6,68 @@ import { GraduationCap, Briefcase, Award, Users } from 'lucide-react'
 
 const timelineEvents = [
   {
-    year: "2023",
+    year: "2020",
     title: "Senior Software Engineer",
-    company: "TechCorp",
-    description: "Leading a team of 6 engineers, architecting microservices solutions, and mentoring junior developers.",
+    company: "Apple Inc.",
+    description: "Leading a team of 6 engineers, Next.js Developer, and mentoring junior developers.",
     icon: Users,
     type: "work"
   },
   {
-    year: "2022",
-    title: "AWS Solutions Architect Certification",
-    company: "Amazon Web Services",
-    description: "Achieved AWS Certified Solutions Architect - Professional certification, demonstrating expertise in cloud architecture.",
-    icon: Award,
-    type: "certification"
-  },
-  {
     year: "2021",
     title: "Full-Stack Developer",
-    company: "InnovateTech",
+    company: "GCML Herbal",
     description: "Built and deployed multiple React/Node.js applications serving 100K+ users. Implemented CI/CD pipelines and improved performance by 40%.",
     icon: Briefcase,
     type: "work"
   },
   {
     year: "2020",
-    title: "Tech Lead",
-    company: "StartupXYZ",
-    description: "Led the development of a SaaS platform from MVP to $1M ARR. Managed a team of 4 developers and established engineering best practices.",
-    icon: Users,
+    title: "Computer Engineering Degree",
+    company: "International Technological University",
+    description: "Master's degree in Computer Science with focus on algorithms, data structures, and software engineering principles.",
+    icon: GraduationCap,
     type: "work"
   },
   {
-    year: "2019",
-    title: "Software Engineer",
-    company: "DevSolutions",
-    description: "Developed scalable web applications using React and Node.js. Collaborated with cross-functional teams to deliver high-quality software.",
+    year: "2019-2020",
+    title: "React JS Developer (Freelancer)",
+    company: "SCIF",
+    description: "Developed responsive React.js applications with Material Design components. Implemented Redux for state management, worked with RESTful services, and ensured cross-browser compatibility. Focused on accessibility standards and mobile-responsive design.",
     icon: Briefcase,
     type: "work"
   },
   {
-    year: "2016",
-    title: "Computer Science Degree",
-    company: "Stanford University",
+    year: "2018-2019",
+    title: "Frontend Developer",
+    company: "Dell Technologies",
+    description: "Created efficient user interaction screens using HTML5, CSS3, JavaScript, and Angular.js. Developed responsive websites for smart devices, implemented CI/CD pipelines with Jenkins, and worked with clients to refine software requirements.",
+    icon: Briefcase,
+    type: "work"
+  },
+  {
+    year: "2018",
+    title: "Computer Engineering Degree",
+    company: "Gujarat Technological University",
     description: "Bachelor's degree in Computer Science with focus on algorithms, data structures, and software engineering principles.",
     icon: GraduationCap,
     type: "education"
+  },
+  {
+    year: "2017-2018",
+    title: "Frontend Developer",
+    company: "Samsung Engineering",
+    description: "Converted design pages into HTML, CSS, and JavaScript. Developed responsive web applications and mobile apps, analyzed UI/UX designs for improved usability, and collaborated with cross-functional teams throughout the development cycle.",
+    icon: Briefcase,
+    type: "work"
+  },
+  {
+    year: "2016-2017",
+    title: "Software Engineer",
+    company: "Gold coin multitrade limited",
+    description: "Involved in complete SDLC including analysis, development, and implementation. Developed user interfaces using HTML, CSS, JavaScript, and AngularJS. Created web authentication modules and worked extensively with databases and eCommerce platforms.",
+    icon: Briefcase,
+    type: "work"
   }
 ]
 
