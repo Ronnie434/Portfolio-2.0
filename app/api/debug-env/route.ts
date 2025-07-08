@@ -1,14 +1,14 @@
 import { NextResponse } from 'next/server'
 
 export async function GET() {
-  const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
-  const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
-  
-  return NextResponse.json({
-    hasSupabaseUrl: !!supabaseUrl,
-    hasSupabaseAnonKey: !!supabaseAnonKey,
-    supabaseUrlPreview: supabaseUrl ? `${supabaseUrl.substring(0, 20)}...` : 'NOT_SET',
-    supabaseAnonKeyPreview: supabaseAnonKey ? `${supabaseAnonKey.substring(0, 20)}...` : 'NOT_SET',
+  return new Response(JSON.stringify({
+    hasSupabaseUrl: !!process.env.NEXT_PUBLIC_SUPABASE_URL,
+    hasAnonKey: !!process.env.SUPABASE_ANON_KEY,
+    supabaseUrlValue: process.env.NEXT_PUBLIC_SUPABASE_URL || 'undefined',
     timestamp: new Date().toISOString()
-  })
+  }), {
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
 } 
