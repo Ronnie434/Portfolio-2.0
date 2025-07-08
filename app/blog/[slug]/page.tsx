@@ -40,8 +40,18 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 }
 
 export async function generateStaticParams() {
-  const posts = await getAllBlogPosts()
-  return posts.map(post => ({
-    slug: post.slug
+  // Static list of blog post slugs for build-time generation
+  // This avoids needing to connect to Supabase during build
+  const slugs = [
+    'scalable-react-nextjs-14',
+    'microservices-nodejs-docker',
+    'advanced-typescript-patterns-better-code',
+    'state-management-react-redux-zustand-context',
+    'implementing-cicd-pipelines-github-actions',
+    'database-optimization-high-traffic-applications'
+  ]
+  
+  return slugs.map(slug => ({
+    slug
   }))
 } 
