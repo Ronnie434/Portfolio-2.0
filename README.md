@@ -135,4 +135,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 Ronak Patel - [ronak@ronakpatel.dev](mailto:ronak@ronakpatel.dev)
 
-Project Link: [https://github.com/ronakpatel/portfolio-2.0](https://github.com/ronakpatel/portfolio-2.0) 
+Project Link: [https://github.com/Ronnie434/Portfolio-2.0](https://github.com/Ronnie434/Portfolio-2.0) 

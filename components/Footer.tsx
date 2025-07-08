@@ -9,7 +9,7 @@ export function Footer() {
         <div className="flex flex-col items-center justify-between py-6 md:flex-row">
           <div className="flex items-center space-x-6">
             <Link
-              href="https://github.com/ronakpatel"
+              href="https://github.com/Ronnie434"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-foreground transition-colors"

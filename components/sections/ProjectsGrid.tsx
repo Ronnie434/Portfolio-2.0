@@ -13,7 +13,7 @@ const projects: Project[] = [
     title: "E-Commerce Platform",
     description: "Full-stack e-commerce solution with Next.js, Stripe integration, and microservices architecture. Features include real-time inventory, admin dashboard, and mobile-responsive design.",
     tech: ["Next.js", "TypeScript", "Node.js", "MongoDB", "Stripe"],
-    github: "https://github.com/ronakpatel/ecommerce-platform",
+    github: "https://github.com/Ronnie434/ecommerce-platform",
     live: "https://ecommerce-demo.ronakpatel.dev",
     featured: true
   },
@@ -22,7 +22,7 @@ const projects: Project[] = [
     title: "DevOps Dashboard",
     description: "Real-time monitoring dashboard for cloud infrastructure with automated deployment tracking, performance metrics, and alerting system.",
     tech: ["React", "Node.js", "AWS", "Docker", "GraphQL"],
-    github: "https://github.com/ronakpatel/devops-dashboard",
+    github: "https://github.com/Ronnie434/devops-dashboard",
     live: "https://devops-dashboard.ronakpatel.dev",
     featured: true
   },
@@ -31,7 +31,7 @@ const projects: Project[] = [
     title: "AI Content Generator",
     description: "SaaS application that generates marketing content using OpenAI API. Features include user authentication, subscription management, and content optimization.",
     tech: ["Next.js", "Prisma", "OpenAI", "Stripe", "PostgreSQL"],
-    github: "https://github.com/ronakpatel/ai-content-generator",
+    github: "https://github.com/Ronnie434/ai-content-generator",
     live: "https://ai-content.ronakpatel.dev",
     featured: true
   },
@@ -40,7 +40,7 @@ const projects: Project[] = [
     title: "Task Management API",
     description: "RESTful API for task management with authentication, real-time updates, and team collaboration features. Built with Node.js and MongoDB.",
     tech: ["Node.js", "Express", "MongoDB", "JWT", "Socket.io"],
-    github: "https://github.com/ronakpatel/task-api",
+    github: "https://github.com/Ronnie434/task-api",
     featured: false
   },
   {
@@ -48,7 +48,7 @@ const projects: Project[] = [
     title: "Real-time Chat App",
     description: "WebSocket-based chat application with rooms, file sharing, and message history. Includes mobile-responsive design and push notifications.",
     tech: ["React", "Socket.io", "Node.js", "Redis", "MongoDB"],
-    github: "https://github.com/ronakpatel/chat-app",
+    github: "https://github.com/Ronnie434/chat-app",
     live: "https://chat-app.ronakpatel.dev",
     featured: false
   },
@@ -57,7 +57,7 @@ const projects: Project[] = [
     title: "GraphQL Blog CMS",
     description: "Headless CMS for managing blog content with GraphQL API, rich text editor, and multi-author support. Built with modern React patterns.",
     tech: ["React", "GraphQL", "Prisma", "PostgreSQL", "Apollo"],
-    github: "https://github.com/ronakpatel/blog-cms",
+    github: "https://github.com/Ronnie434/blog-cms",
     featured: false
   },
   {
@@ -65,7 +65,7 @@ const projects: Project[] = [
     title: "Cloud Infrastructure Monitor",
     description: "Infrastructure monitoring tool with automated scaling, cost optimization, and performance analytics for AWS resources.",
     tech: ["Python", "AWS", "CloudWatch", "Lambda", "DynamoDB"],
-    github: "https://github.com/ronakpatel/cloud-monitor",
+    github: "https://github.com/Ronnie434/cloud-monitor",
     featured: false
   },
   {
@@ -73,7 +73,7 @@ const projects: Project[] = [
     title: "Mobile-First Portfolio",
     description: "Responsive portfolio website with dark mode, animations, and optimized performance. Built with Next.js and deployed on Vercel.",
     tech: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
-    github: "https://github.com/ronakpatel/portfolio",
+    github: "https://github.com/Ronnie434/portfolio",
     live: "https://ronakpatel.dev",
     featured: false
   }

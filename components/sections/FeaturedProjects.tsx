@@ -11,7 +11,7 @@ const featuredProjects = [
     title: "E-Commerce Platform",
     description: "Full-stack e-commerce solution with Next.js, Stripe integration, and microservices architecture. Features include real-time inventory, admin dashboard, and mobile-responsive design.",
     tech: ["Next.js", "TypeScript", "Node.js", "MongoDB", "Stripe"],
-    github: "https://github.com/ronakpatel/ecommerce-platform",
+    github: "https://github.com/Ronnie434/ecommerce-platform",
     live: "https://ecommerce-demo.ronakpatel.dev",
     featured: true
   },
@@ -20,7 +20,7 @@ const featuredProjects = [
     title: "DevOps Dashboard",
     description: "Real-time monitoring dashboard for cloud infrastructure with automated deployment tracking, performance metrics, and alerting system.",
     tech: ["React", "Node.js", "AWS", "Docker", "GraphQL"],
-    github: "https://github.com/ronakpatel/devops-dashboard",
+    github: "https://github.com/Ronnie434/devops-dashboard",
     live: "https://devops-dashboard.ronakpatel.dev",
     featured: true
   },
@@ -29,7 +29,7 @@ const featuredProjects = [
     title: "AI Content Generator",
     description: "SaaS application that generates marketing content using OpenAI API. Features include user authentication, subscription management, and content optimization.",
     tech: ["Next.js", "Prisma", "OpenAI", "Stripe", "PostgreSQL"],
-    github: "https://github.com/ronakpatel/ai-content-generator",
+    github: "https://github.com/Ronnie434/ai-content-generator",
     live: "https://ai-content.ronakpatel.dev",
     featured: true
   }
