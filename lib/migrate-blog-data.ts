@@ -5,7 +5,7 @@
 
 import { blogPosts } from './blog-data'
 import { createBlogPost } from './blog-supabase'
-import { createBlogPostDirect } from './blog-supabase-direct'
+// Direct import removed for security - using regular createBlogPost
 
 // Predefined metadata for existing blog posts
 const blogMetadata = {
