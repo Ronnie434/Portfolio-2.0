@@ -4,6 +4,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Send, Check, AlertCircle } from 'lucide-react'
+import emailjs from 'emailjs-com'
 
 interface FormData {
   name: string
@@ -66,24 +67,20 @@ export function ContactForm() {
     setSubmitStatus('idle')
 
     try {
-      // In a real application, you would send this to your backend
-      // For now, we'll simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      // Use emailjs to send the form
+      const result = await emailjs.sendForm(
+        "service_e6avysv",      // Your Service ID
+        "template_rvdz9ab",     // Your Template ID
+        e.target as HTMLFormElement, // Form reference
+        "AuZVqfm2MHP4UPtNK"     // Your Public Key
+      )
       
-      // Here you would typically send the form data to your backend:
-      // const response = await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData)
-      // })
-      
-      console.log('Form submitted:', formData)
-      
+      console.log('Email sent successfully:', result.text)
       setSubmitStatus('success')
       setFormData({ name: '', email: '', subject: '', message: '' })
       setErrors({})
     } catch (error) {
-      console.error('Form submission error:', error)
+      console.error('Failed to send email:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
