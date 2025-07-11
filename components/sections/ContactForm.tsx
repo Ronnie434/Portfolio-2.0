@@ -4,18 +4,19 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Send, Check, AlertCircle } from 'lucide-react'
+import emailjs from 'emailjs-com'
 
 interface FormData {
   name: string
   email: string
-  subject: string
+  title: string
   message: string
 }
 
 interface FormErrors {
   name?: string
   email?: string
-  subject?: string
+  title?: string
   message?: string
 }
 
@@ -23,7 +24,7 @@ export function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
-    subject: '',
+    title: '',
     message: ''
   })
   const [errors, setErrors] = useState<FormErrors>({})
@@ -43,8 +44,8 @@ export function ContactForm() {
       newErrors.email = 'Please enter a valid email address'
     }
 
-    if (!formData.subject.trim()) {
-      newErrors.subject = 'Subject is required'
+    if (!formData.title.trim()) {
+      newErrors.title = 'Title is required'
     }
 
     if (!formData.message.trim()) {
@@ -66,24 +67,20 @@ export function ContactForm() {
     setSubmitStatus('idle')
 
     try {
-      // In a real application, you would send this to your backend
-      // For now, we'll simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      // Use emailjs to send the form
+      const result = await emailjs.sendForm(
+        "service_e6avysv",      // Your Service ID
+        "template_rvdz9ab",     // Your Template ID
+        e.target as HTMLFormElement, // Form reference
+        "AuZVqfm2MHP4UPtNK"     // Your Public Key
+      )
       
-      // Here you would typically send the form data to your backend:
-      // const response = await fetch('/api/contact', {
-      //   method: 'POST',
-      //   headers: { 'Content-Type': 'application/json' },
-      //   body: JSON.stringify(formData)
-      // })
-      
-      console.log('Form submitted:', formData)
-      
+      console.log('Email sent successfully:', result.text)
       setSubmitStatus('success')
-      setFormData({ name: '', email: '', subject: '', message: '' })
+      setFormData({ name: '', email: '', title: '', message: '' })
       setErrors({})
     } catch (error) {
-      console.error('Form submission error:', error)
+      console.error('Failed to send email:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -176,22 +173,22 @@ export function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="subject" className="block text-sm font-medium text-card-foreground mb-2">
-            Subject
+          <label htmlFor="title" className="block text-sm font-medium text-card-foreground mb-2">
+            Title
           </label>
           <input
             type="text"
-            id="subject"
-            name="subject"
-            value={formData.subject}
+            id="title"
+            name="title"
+            value={formData.title}
             onChange={handleChange}
             className={`w-full px-3 py-2 border rounded-md bg-background text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent ${
-              errors.subject ? 'border-red-500' : 'border-border'
+              errors.title ? 'border-red-500' : 'border-border'
             }`}
             placeholder="What's this about?"
           />
-          {errors.subject && (
-            <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.subject}</p>
+          {errors.title && (
+            <p className="mt-1 text-sm text-red-600 dark:text-red-400">{errors.title}</p>
           )}
         </div>
 
