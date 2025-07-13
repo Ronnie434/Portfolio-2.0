@@ -1,14 +1,15 @@
 // scripts/add-ai-blog-post.ts
 import { createBlogPost } from '../lib/blog-supabase'
-import { getBlogPost, getBlogPostMeta } from '../lib/blog-data'
+import { getBlogTemplate } from '../lib/blog-templates'
+import { getFallbackBlogPostMeta } from '../lib/blog-data-minimal'
 
 async function addAIBlogPost() {
   try {
     console.log('Starting to add AI agents blog post to Supabase...')
     
     // Get the blog post data from local data
-    const blogPostData = getBlogPost('ai-agents-developer-productivity')
-    const blogPostMeta = getBlogPostMeta('ai-agents-developer-productivity')
+    const blogPostData = getBlogTemplate('ai-agents-developer-productivity')
+    const blogPostMeta = getFallbackBlogPostMeta('ai-agents-developer-productivity')
     
     if (!blogPostData || !blogPostMeta) {
       console.error('Blog post data not found in local data')
