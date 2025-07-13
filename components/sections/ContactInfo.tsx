@@ -48,8 +48,8 @@ const socialLinks = [
   {
     icon: Twitter,
     label: "Twitter",
-    href: "https://twitter.com/ronakpatel",
-    username: "@ronakpatel"
+    href: "https://twitter.com/ronakpatel434",
+    username: "@ronakpatel434"
   }
 ]
 
