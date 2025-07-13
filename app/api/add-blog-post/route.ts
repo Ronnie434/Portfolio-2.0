@@ -1,7 +1,8 @@
 // app/api/add-blog-post/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 import { createBlogPost } from '@/lib/blog-supabase'
-import { getBlogPost, getBlogPostMeta } from '@/lib/blog-data'
+import { getBlogTemplate } from '@/lib/blog-templates'
+import { getFallbackBlogPostMeta } from '@/lib/blog-data-minimal'
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,15 +14,18 @@ export async function POST(request: NextRequest) {
     
     console.log('Adding blog post to Supabase:', slug)
     
-    // Get the blog post data from local data
-    const blogPostData = getBlogPost(slug)
-    const blogPostMeta = getBlogPostMeta(slug)
+    // Get the blog post template and metadata
+    const blogPostData = getBlogTemplate(slug)
+    const blogPostMeta = getFallbackBlogPostMeta(slug)
     
     if (!blogPostData || !blogPostMeta) {
-      return NextResponse.json({ error: 'Blog post not found in local data' }, { status: 404 })
+      return NextResponse.json({ 
+        error: `Blog post template or metadata not found for slug: ${slug}`,
+        available_templates: ['ai-agents-developer-productivity', 'automate-anything-building-smart-workflows-n8n']
+      }, { status: 404 })
     }
     
-    console.log('Blog post data loaded:', blogPostData.title)
+    console.log('Blog post template loaded:', blogPostData.title)
     console.log('Sections count:', blogPostData.sections.length)
     
     // Create the blog post in Supabase
@@ -42,7 +46,8 @@ export async function POST(request: NextRequest) {
         slug: blogPostMeta.slug,
         title: blogPostData.title,
         tags: blogPostMeta.tags,
-        readTime: blogPostMeta.readTime
+        readTime: blogPostMeta.readTime,
+        sectionsCount: blogPostData.sections.length
       })
     } else {
       return NextResponse.json({ error: 'Failed to add blog post to Supabase' }, { status: 500 })
