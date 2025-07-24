@@ -40,7 +40,7 @@ const projects: Project[] = [
     title: "Task Management API",
     description: "RESTful API for task management with authentication, real-time updates, and team collaboration features. Built with Node.js and MongoDB.",
     tech: ["Node.js", "Express", "MongoDB", "JWT", "Socket.io"],
-    github: "https://github.com/Ronnie434/task-api",
+    github: "https://github.com/Ronnie434/Task-Mangement-API",
     featured: false
   },
   {
