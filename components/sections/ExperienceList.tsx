@@ -15,14 +15,6 @@ const experiences: Experience[] = [
     tech: ["Next.js", "React", "TypeScript", "Node.js", "AWS", "Docker", "Kubernetes", "MongoDB"]
   },
   {
-    id: "2",
-    company: "SCIF",
-    position: "React JS Developer (Freelancer)",
-    duration: "Jul 2019 - Nov 2020",
-    description: "Worked on an Agile (Scrum) Development Team delivering regular updates. Developed responsive React.js applications with Material Design components, implemented Redux for state management, and ensured cross-browser compatibility. Focused on accessibility standards following Section 508 and ADA compliance.",
-    tech: ["React.js", "Redux", "Material Design", "HTML5", "CSS3", "JavaScript", "jQuery", "Bootstrap", "SASS", "MongoDB"]
-  },
-  {
     id: "3",
     company: "Dell Technologies",
     position: "Frontend Developer",
@@ -45,6 +37,14 @@ const experiences: Experience[] = [
     duration: "Jan 2016 - May 2017",
     description: "Involved in complete SDLC including analysis, development, and implementation. Developed user interfaces using modern web technologies, created web authentication modules, and worked extensively with databases and eCommerce platforms. Administered Linux systems and managed server configurations.",
     tech: ["AngularJS", "JavaScript", "HTML", "CSS", "jQuery", "Java Servlets", "JSP", "MySQL", "Linux", "Ajax", "JSON"]
+  },
+  {
+    id: "6",
+    company: "Tech Innovations Inc.",
+    position: "Full Stack Developer",
+    duration: "Jun 2015 - Dec 2015",
+    description: "Developed full-stack web applications using modern JavaScript frameworks. Collaborated with design teams to implement responsive UI components and integrated RESTful APIs with backend services. Implemented automated testing and deployment pipelines.",
+    tech: ["JavaScript", "Node.js", "Express", "React", "MongoDB", "HTML5", "CSS3", "Jest", "Git"]
   }
 ]
 
@@ -165,4 +165,4 @@ export function ExperienceList() {
       </motion.div>
     </div>
   )
-} 
+}
