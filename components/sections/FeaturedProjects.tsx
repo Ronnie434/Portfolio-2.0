@@ -17,11 +17,11 @@ const featuredProjects = [
   },
   {
     id: "2",
-    title: "DevOps Dashboard",
-    description: "Real-time monitoring dashboard for cloud infrastructure with automated deployment tracking, performance metrics, and alerting system.",
-    tech: ["React", "Node.js", "AWS", "Docker", "GraphQL"],
-    github: "https://github.com/Ronnie434/devops-dashboard",
-    live: "https://devops-dashboard.ronakpatel.dev",
+    title: "Investment Portfolio Tracker",
+    description: "Comprehensive investment portfolio tracker that fetches and displays Robinhood personal investment data including stocks, options, dividends, and advanced analytics with real-time monitoring.",
+    tech: ["Next.js", "TypeScript", "Node.js", "Python", "PostgreSQL", "Redis", "Prisma"],
+    github: "https://github.com/Ronnie434/investment-portfolio-tracker",
+    live: "https://portfolio-tracker.ronakpatel.dev",
     featured: true
   },
   {
