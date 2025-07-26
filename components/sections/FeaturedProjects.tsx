@@ -21,7 +21,7 @@ const featuredProjects = [
     description: "Comprehensive investment portfolio tracker that fetches and displays Robinhood personal investment data including stocks, options, dividends, and advanced analytics with real-time monitoring.",
     tech: ["Next.js", "TypeScript", "Node.js", "Python", "PostgreSQL", "Redis", "Prisma"],
     github: "https://github.com/Ronnie434/Investment-Portfolio-Tracker",
-    live: "https://portfolio-tracker.ronakpatel.dev",
+    live: "https://investment-portfolio-tracker-9psu71pkb.vercel.app",
     featured: true
   },
   {
