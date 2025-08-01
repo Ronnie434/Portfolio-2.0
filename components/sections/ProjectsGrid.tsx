@@ -14,7 +14,7 @@ const projects: Project[] = [
     description: "Full-stack e-commerce solution with Next.js, Stripe integration, and microservices architecture. Features include real-time inventory, admin dashboard, and mobile-responsive design.",
     tech: ["Next.js", "TypeScript", "Node.js", "MongoDB", "Stripe"],
     github: "https://github.com/Ronnie434/ecommerce-platform",
-    live: "https://ecommerce-demo.ronakpatel.dev",
+    // live: "https://ecommerce-demo.ronakpatel.dev",
     featured: true
   },
   {
@@ -22,8 +22,8 @@ const projects: Project[] = [
     title: "Investment Portfolio Tracker",
     description: "Comprehensive investment portfolio tracker that fetches and displays Robinhood personal investment data including stocks, options, dividends, and advanced analytics with real-time monitoring.",
     tech: ["Next.js", "TypeScript", "Node.js", "Python", "PostgreSQL", "Redis", "Prisma"],
-    github: "https://github.com/Ronnie434/Investment-Portfolio-Tracker",
-    live: "https://investment-portfolio-tracker-9psu71pkb.vercel.app",
+    github: "https://github.com/Ronnie434/IPT",
+    live: "https://ipt-gilt.vercel.app",
     featured: true
   },
   {
@@ -32,7 +32,7 @@ const projects: Project[] = [
     description: "SaaS application that generates marketing content using OpenAI API. Features include user authentication, subscription management, and content optimization.",
     tech: ["Next.js", "Prisma", "OpenAI", "Stripe", "PostgreSQL"],
     github: "https://github.com/Ronnie434/ai-content-generator",
-    live: "https://ai-content.ronakpatel.dev",
+    // live: "https://ai-content.ronakpatel.dev",
     featured: true
   },
   {
@@ -49,7 +49,7 @@ const projects: Project[] = [
     description: "WebSocket-based chat application with rooms, file sharing, and message history. Includes mobile-responsive design and push notifications.",
     tech: ["React", "Socket.io", "Node.js", "Redis", "MongoDB"],
     github: "https://github.com/Ronnie434/chat-app",
-    live: "https://chat-app.ronakpatel.dev",
+    // live: "https://chat-app.ronakpatel.dev",
     featured: false
   },
   {
@@ -73,8 +73,8 @@ const projects: Project[] = [
     title: "Mobile-First Portfolio",
     description: "Responsive portfolio website with dark mode, animations, and optimized performance. Built with Next.js and deployed on Vercel.",
     tech: ["Next.js", "Tailwind CSS", "Framer Motion", "Vercel"],
-    github: "https://github.com/Ronnie434/portfolio",
-    live: "https://ronakpatel.dev",
+    github: "https://github.com/Ronnie434/Portfolio-2.0",
+    live: "https://ronakpatel.me",
     featured: false
   }
 ]
@@ -207,3 +207,20 @@ export function ProjectsGrid() {
     </div>
   )
 } 
+
+
+// Video Library – Full-Stack MERN Application
+// Tech Stack: MongoDB, Express.js, React.js, Node.js (MERN) | RESTful API | JSON
+// •	Built a full-stack video management system using the MERN stack, enabling users to view, add, update, and delete video records via an intuitive UI.
+// •	Designed a RESTful API with Express.js and Node.js to handle CRUD operations and expose video data stored in MongoDB.
+// •	Developed the front-end with React.js, leveraging state management and API integration for dynamic rendering and responsive user interactions.
+// •	Ensured modular code structure, clean routing, and robust error handling for both front-end and back-end components.
+// •	Followed REST principles, using JSON for structured and efficient data exchange between client and server.
+
+// Bunkmate – Roommate Finder Web App
+// Tech Stack: React.js, Next.js (for SEO), HTML5, CSS3, JavaScript | Backend: Java Spring Boot | Database: MySQL
+// •	Developed a secure, SEO-friendly, and responsive front-end using React.js and modern JavaScript, enhancing user engagement and discoverability.
+// •	Integrated core user features including Google/Facebook OAuth, user registration, apartment listings, and account management with smooth UI/UX.
+// •	Implemented advanced functionalities such as pagination, i18n/localization, cross-browser compatibility, and facial recognition for profile verification.
+// •	Integrated Google Maps API for location-based apartment discovery and machine learning-based recommendation engine to deliver personalized roommate suggestions based on preferences, likes, and rating history.
+// •	Prioritized modular architecture and reusable components, following best practices for maintainability and scalability.

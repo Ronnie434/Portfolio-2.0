@@ -33,7 +33,7 @@ export function Hero() {
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
               <Link
-                href="/resume.pdf"
+                href="/RonakPatel_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center rounded-md border border-border bg-background px-6 py-3 text-base font-medium text-foreground shadow-sm hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring transition-colors"
