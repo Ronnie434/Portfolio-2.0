@@ -8,33 +8,41 @@ import { ExternalLink, Github, Filter } from 'lucide-react'
 import type { Project } from '@/types'
 
 const projects: Project[] = [
-  {
-    id: "1",
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with Next.js, Stripe integration, and microservices architecture. Features include real-time inventory, admin dashboard, and mobile-responsive design.",
-    tech: ["Next.js", "TypeScript", "Node.js", "MongoDB", "Stripe"],
-    github: "https://github.com/Ronnie434/ecommerce-platform",
-    // live: "https://ecommerce-demo.ronakpatel.dev",
-    featured: true
-  },
-  {
-    id: "2",
-    title: "Investment Portfolio Tracker",
-    description: "Comprehensive investment portfolio tracker that fetches and displays Robinhood personal investment data including stocks, options, dividends, and advanced analytics with real-time monitoring.",
-    tech: ["Next.js", "TypeScript", "Node.js", "Python", "PostgreSQL", "Redis", "Prisma"],
-    github: "https://github.com/Ronnie434/IPT",
-    live: "https://ipt-gilt.vercel.app",
-    featured: true
-  },
-  {
-    id: "3",
-    title: "AI Content Generator",
-    description: "SaaS application that generates marketing content using OpenAI API. Features include user authentication, subscription management, and content optimization.",
-    tech: ["Next.js", "Prisma", "OpenAI", "Stripe", "PostgreSQL"],
-    github: "https://github.com/Ronnie434/ai-content-generator",
-    // live: "https://ai-content.ronakpatel.dev",
-    featured: true
-  },
+    {
+      id: "1",
+      title: "E-Commerce Platform",
+      description: "Full-stack e-commerce solution with Next.js, Stripe integration, and microservices architecture. Features include real-time inventory, admin dashboard, and mobile-responsive design.",
+      tech: ["Next.js", "TypeScript", "Node.js", "MongoDB", "Stripe"],
+      github: "https://github.com/Ronnie434/ecommerce-platform",
+      // live: "https://ecommerce-demo.ronakpatel.dev",
+      featured: true
+    },
+    {
+      id: "2",
+      title: "Investment Portfolio Tracker",
+      description: "Comprehensive investment portfolio tracker that fetches and displays Robinhood personal investment data including stocks, options, dividends, and advanced analytics with real-time monitoring.",
+      tech: ["Next.js", "TypeScript", "Node.js", "Python", "PostgreSQL", "Redis", "Prisma"],
+      github: "https://github.com/Ronnie434/IPT",
+      live: "https://ipt-gilt.vercel.app",
+      featured: true
+    },
+    {
+      id: "3",
+      title: "AI Content Generator",
+      description: "SaaS application that generates marketing content using OpenAI API. Features include user authentication, subscription management, and content optimization.",
+      tech: ["Next.js", "Prisma", "OpenAI", "Stripe", "PostgreSQL"],
+      github: "https://github.com/Ronnie434/ai-content-generator",
+      // live: "https://ai-content.ronakpatel.dev",
+      featured: true
+    },
+    {
+      id: "9",
+      title: "Smart Subscription Tracker (Subscribely)",
+      description: "Cloud-enabled React Native app for tracking recurring subscriptions with monthly summaries, renewal reminders, analytics dashboard, and synchronized data across devices via Supabase.",
+      tech: ["React Native", "Expo", "TypeScript", "Supabase", "Push Notifications"],
+      github: "https://github.com/Ronnie434/subscribely",
+      featured: true
+    },
   {
     id: "4",
     title: "Task Management API",
