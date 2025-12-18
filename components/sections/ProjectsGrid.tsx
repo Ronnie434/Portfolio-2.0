@@ -40,8 +40,8 @@ const projects: Project[] = [
       title: "Renvo",
       description: "Smart expense tracker with monthly summaries, renewal reminders, analytics dashboard, and synchronized data across devices via Supabase.",
       tech: ["React Native", "Expo", "TypeScript", "Supabase", "Push Notifications", "iOS", "Android"],
-      github: "https://github.com/Ronnie434/subscribely",
-      live: "https://ronnie434.github.io/Subscribely/",
+      github: "https://github.com/Ronnie434/The-Renvo",
+      live: "https://therenvo.com",
       featured: true
     },
   {
