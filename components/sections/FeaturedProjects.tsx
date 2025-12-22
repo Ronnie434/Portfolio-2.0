@@ -7,7 +7,7 @@ import { ExternalLink, Github, ArrowRight } from 'lucide-react'
 
 const featuredProjects = [
   {
-    id: "9",
+    id: "1",
     title: "Renvo",
     description: "Smart expense tracker with monthly summaries, renewal reminders, analytics dashboard, and synchronized data across devices via Supabase.",
     tech: ["React Native", "Expo", "TypeScript", "Supabase", "Push Notifications", "iOS", "Android"],
@@ -25,7 +25,7 @@ const featuredProjects = [
     featured: true
   },
   {
-    id: "7",
+    id: "3",
     title: "AI Companion",
     description: "An AI companion that remembers, tracks, and warns you about what's coming — before it becomes a problem. Stop getting surprised by life.",
     tech: ["React", "TypeScript", "Vite", "Tailwind CSS"],
