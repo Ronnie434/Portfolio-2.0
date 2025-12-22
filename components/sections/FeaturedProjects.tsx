@@ -7,12 +7,12 @@ import { ExternalLink, Github, ArrowRight } from 'lucide-react'
 
 const featuredProjects = [
   {
-    id: "1",
-    title: "E-Commerce Platform",
-    description: "Full-stack e-commerce solution with Next.js, Stripe integration, and microservices architecture. Features include real-time inventory, admin dashboard, and mobile-responsive design.",
-    tech: ["Next.js", "TypeScript", "Node.js", "MongoDB", "Stripe"],
-    github: "https://github.com/Ronnie434/ecommerce-platform",
-    live: "https://ecommerce-demo.ronakpatel.dev",
+    id: "9",
+    title: "Renvo",
+    description: "Smart expense tracker with monthly summaries, renewal reminders, analytics dashboard, and synchronized data across devices via Supabase.",
+    tech: ["React Native", "Expo", "TypeScript", "Supabase", "Push Notifications", "iOS", "Android"],
+    github: "https://github.com/Ronnie434/The-Renvo",
+    live: "https://therenvo.com",
     featured: true
   },
   {
@@ -25,12 +25,12 @@ const featuredProjects = [
     featured: true
   },
   {
-    id: "3",
-    title: "AI Content Generator",
-    description: "SaaS application that generates marketing content using OpenAI API. Features include user authentication, subscription management, and content optimization.",
-    tech: ["Next.js", "Prisma", "OpenAI", "Stripe", "PostgreSQL"],
-    github: "https://github.com/Ronnie434/ai-content-generator",
-    live: "https://ai-content.ronakpatel.dev",
+    id: "7",
+    title: "AI Companion",
+    description: "An AI companion that remembers, tracks, and warns you about what's coming — before it becomes a problem. Stop getting surprised by life.",
+    tech: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+    github: "https://github.com/Ronnie434/AI-Companion",
+    live: "https://ai-companion-eta-cyan.vercel.app/",
     featured: true
   }
 ]
