@@ -71,10 +71,11 @@ const projects: Project[] = [
   },
   {
     id: "7",
-    title: "Cloud Infrastructure Monitor",
-    description: "Infrastructure monitoring tool with automated scaling, cost optimization, and performance analytics for AWS resources.",
-    tech: ["Python", "AWS", "CloudWatch", "Lambda", "DynamoDB"],
-    github: "https://github.com/Ronnie434/cloud-monitor",
+    title: "AI Companion",
+    description: "An AI companion that remembers, tracks, and warns you about what's coming — before it becomes a problem. Stop getting surprised by life.",
+    tech: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+    github: "https://github.com/Ronnie434/AI-Companion",
+    live: "https://ai-companion-eta-cyan.vercel.app/",
     featured: false
   },
   {
