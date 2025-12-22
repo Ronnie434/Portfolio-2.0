@@ -44,7 +44,7 @@ export default function AddBlogPage() {
         <div className="bg-card p-6 rounded-lg border mb-6">
           <h2 className="text-xl font-semibold mb-4">AI Agents Developer Productivity Blog</h2>
           <p className="text-muted-foreground mb-4">
-            Click the button below to add the "How AI Agents can help to improve productivity of Developer" blog post to your Supabase database.
+            Click the button below to add the &quot;How AI Agents can help to improve productivity of Developer&quot; blog post to your Supabase database.
           </p>
           
           <button
@@ -59,7 +59,7 @@ export default function AddBlogPage() {
         <div className="bg-card p-6 rounded-lg border mb-6">
           <h2 className="text-xl font-semibold mb-4">n8n Workflow Automation Blog</h2>
           <p className="text-muted-foreground mb-4">
-            Click the button below to add the "Automate Anything: Building Smart Workflows with n8n" blog post to your Supabase database.
+            Click the button below to add the &quot;Automate Anything: Building Smart Workflows with n8n&quot; blog post to your Supabase database.
           </p>
           
           <button

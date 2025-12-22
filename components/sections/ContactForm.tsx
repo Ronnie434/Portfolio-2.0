@@ -114,7 +114,7 @@ export function ContactForm() {
           <div className="flex items-center">
             <Check className="h-5 w-5 text-green-600 dark:text-green-400 mr-2" />
             <p className="text-sm font-medium text-green-800 dark:text-green-200">
-              Message sent successfully! I'll get back to you soon.
+              Message sent successfully! I&apos;ll get back to you soon.
             </p>
           </div>
         </div>

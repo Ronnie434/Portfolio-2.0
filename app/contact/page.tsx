@@ -17,8 +17,8 @@ export default function Contact() {
             Get In Touch
           </h1>
           <p className="mt-6 text-lg text-muted-foreground max-w-2xl mx-auto">
-            I'm always interested in hearing about new opportunities, projects, 
-            or just connecting with fellow developers. Let's start a conversation.
+            I&apos;m always interested in hearing about new opportunities, projects,
+            or just connecting with fellow developers. Let&apos;s start a conversation.
           </p>
         </div>
         
