@@ -20,15 +20,15 @@ export function AboutHero() {
               About Me
             </h1>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              I'm Ronak Patel, a Senior Software Engineer with over 8 years of experience 
-              building scalable web applications and leading development teams. I'm passionate 
+              I&apos;m Ronak Patel, a Senior Software Engineer with over 8 years of experience
+              building scalable web applications and leading development teams. I&apos;m passionate
               about creating elegant solutions to complex problems and staying at the forefront 
               of technology trends.
             </p>
             <p className="mt-6 text-lg leading-8 text-muted-foreground">
               My journey in software development began with a Computer Science degree, 
               where I developed a strong foundation in algorithms, data structures, and 
-              software architecture. Since then, I've had the privilege of working with 
+              software architecture. Since then, I&apos;ve had the privilege of working with
               startups and Fortune 500 companies, helping them build products that serve 
               millions of users.
             </p>

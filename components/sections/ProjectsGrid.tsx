@@ -31,7 +31,7 @@ const projects: Project[] = [
       title: "AI Content Generator",
       description: "SaaS application that generates marketing content using OpenAI API. Features include user authentication, subscription management, and content optimization.",
       tech: ["Next.js", "Prisma", "OpenAI", "Stripe", "PostgreSQL"],
-      github: "https://github.com/Ronnie434/ai-content-generator",
+      github: "https://github.com/Ronnie434/AI-Content-Generator",
       // live: "https://ai-content.ronakpatel.dev",
       featured: true
     },
@@ -57,7 +57,7 @@ const projects: Project[] = [
     title: "Real-time Chat App",
     description: "WebSocket-based chat application with rooms, file sharing, and message history. Includes mobile-responsive design and push notifications.",
     tech: ["React", "Socket.io", "Node.js", "Redis", "MongoDB"],
-    github: "https://github.com/Ronnie434/chat-app",
+    github: "https://github.com/Ronnie434/Real-time-chat-app",
     // live: "https://chat-app.ronakpatel.dev",
     featured: false
   },
@@ -66,7 +66,7 @@ const projects: Project[] = [
     title: "GraphQL Blog CMS",
     description: "Headless CMS for managing blog content with GraphQL API, rich text editor, and multi-author support. Built with modern React patterns.",
     tech: ["React", "GraphQL", "Prisma", "PostgreSQL", "Apollo"],
-    github: "https://github.com/Ronnie434/blog-cms",
+    github: "https://github.com/Ronnie434/GraphQL-Blog-CMS",
     featured: false
   },
   {

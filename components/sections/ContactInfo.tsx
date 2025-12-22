@@ -63,11 +63,11 @@ export function ContactInfo() {
         viewport={{ once: true }}
       >
         <h2 className="text-2xl font-semibold text-foreground mb-4">
-          Let's Connect
+          Let&apos;s Connect
         </h2>
         <p className="text-muted-foreground">
           Whether you have a project in mind, want to discuss opportunities, 
-          or just want to say hello, I'd love to hear from you.
+          or just want to say hello, I&apos;d love to hear from you.
         </p>
       </motion.div>
 
@@ -144,8 +144,8 @@ export function ContactInfo() {
           Current Status
         </h3>
         <p className="text-sm text-muted-foreground mb-4">
-          I'm currently open to new opportunities and interesting projects. 
-          Feel free to reach out if you'd like to collaborate!
+          I&apos;m currently open to new opportunities and interesting projects.
+          Feel free to reach out if you&apos;d like to collaborate!
         </p>
         <div className="flex items-center">
           <div className="w-3 h-3 bg-green-500 rounded-full mr-2"></div>
