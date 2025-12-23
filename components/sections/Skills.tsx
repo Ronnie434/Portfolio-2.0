@@ -75,24 +75,24 @@ const skillCategories = [
 
 export function Skills() {
   return (
-    <section className="py-16 sm:py-24">
+    <section className="py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
           viewport={{ once: true }}
-          className="text-center"
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="font-serif text-4xl font-medium tracking-tight text-foreground sm:text-5xl">
             Skills & Expertise
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
             Comprehensive technical skills developed through years of hands-on experience
           </p>
         </motion.div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2">
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
           {skillCategories.map((category, index) => (
             <motion.div
               key={category.title}
@@ -100,33 +100,35 @@ export function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="rounded-lg border bg-card p-6 shadow-sm"
+              className="rounded-2xl border border-white/10 bg-card/40 backdrop-blur-sm p-8 shadow-sm hover:bg-card/60 transition-colors"
             >
-              <div className="flex items-center mb-6">
-                <category.icon className="h-6 w-6 text-primary mr-3" />
-                <h3 className="text-xl font-semibold text-card-foreground">
+              <div className="flex items-center mb-8">
+                <div className="p-3 rounded-xl bg-primary/10 mr-4">
+                  <category.icon className="h-6 w-6 text-primary" />
+                </div>
+                <h3 className="text-xl font-medium text-foreground">
                   {category.title}
                 </h3>
               </div>
               
-              <div className="space-y-4">
+              <div className="space-y-6">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skill.name} className="space-y-2">
                     <div className="flex justify-between">
-                      <span className="text-sm font-medium text-card-foreground">
+                      <span className="text-sm font-medium text-foreground">
                         {skill.name}
                       </span>
                       <span className="text-sm text-muted-foreground">
                         {skill.level}%
                       </span>
                     </div>
-                    <div className="w-full bg-secondary rounded-full h-2">
+                    <div className="w-full bg-secondary/50 rounded-full h-1.5 overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: skillIndex * 0.1 }}
+                        transition={{ duration: 1, delay: skillIndex * 0.05 }}
                         viewport={{ once: true }}
-                        className="bg-primary h-2 rounded-full"
+                        className="bg-primary h-full rounded-full"
                       />
                     </div>
                   </div>

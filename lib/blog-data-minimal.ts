@@ -1,4 +1,4 @@
-import type { BlogPostMeta } from '@/types'
+import type { BlogPostMeta, BlogPostData } from '@/types'
 
 // Minimal fallback data - only metadata for development/build time
 // This serves as emergency fallback when Supabase is unavailable
@@ -77,12 +77,81 @@ export const blogPostMetaFallback: Record<string, BlogPostMeta> = {
   }
 }
 
+// Full mock content for fallback
+const blogPostContentFallback: Record<string, BlogPostData> = {
+  'microservices-nodejs-docker': {
+    title: "Microservices Architecture with Node.js and Docker",
+    subtitle: "A comprehensive guide to building and deploying microservices using Node.js, Docker, and Kubernetes",
+    estimated_read_time: "15 min read",
+    audience: ["Backend Developers", "DevOps Engineers"],
+    overview: "In the evolving landscape of backend architecture, the shift from monolithic to microservices architecture has been pivotal. This guide explores how to build scalable, resilient microservices using Node.js, containerize them with Docker, and orchestrate them with Kubernetes.",
+    sections: [
+      {
+        title: "Why Microservices?",
+        content: "Microservices architecture breaks down a large application into smaller, independent services that communicate over APIs. This approach offers superior scalability, fault isolation, and flexibility in technology choices.",
+        benefits: ["Scalability: Scale individual components as needed", "Resilience: Failure in one service doesn't crash the system", "Agility: Smaller teams can deploy independently"]
+      },
+      {
+        title: "Containerizing with Docker",
+        content: "Docker ensures consistency across environments by packaging the application and its dependencies into a container.",
+        docker_compose: {
+          language: "yaml",
+          content: `version: '3.8'
+services:
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "8080:8080"
+  user-service:
+    build: ./user-service
+    environment:
+      - DB_HOST=postgres
+  product-service:
+    build: ./product-service`,
+          file: "docker-compose.yml"
+        }
+      },
+      {
+        title: "Orchestration with Kubernetes",
+        content: "Kubernetes manages the deployment, scaling, and operation of application containers across clusters of hosts.",
+        k8s_yaml: {
+          language: "yaml",
+          content: `apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-service
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: user-service
+  template:
+    metadata:
+      labels:
+        app: user-service
+    spec:
+      containers:
+      - name: user-service
+        image: user-service:v1
+        ports:
+        - containerPort: 3000`,
+          file: "deployment.yaml"
+        }
+      }
+    ]
+  }
+}
+
 export function getFallbackBlogPosts(): BlogPostMeta[] {
   return Object.values(blogPostMetaFallback)
 }
 
 export function getFallbackBlogPostMeta(slug: string): BlogPostMeta | null {
   return blogPostMetaFallback[slug] || null
+}
+
+export function getFallbackBlogPost(slug: string): BlogPostData | null {
+  return blogPostContentFallback[slug] || null
 }
 
 // Helper function to check if we have fallback data for a slug

@@ -7,71 +7,83 @@ import { MapPin, Calendar, Award } from 'lucide-react'
 
 export function AboutHero() {
   return (
-    <section className="pt-20 pb-16 sm:pt-24 sm:pb-20">
+    <section className="relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-24 items-center">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-col justify-center"
+            transition={{ duration: 0.6 }}
+            className="flex flex-col justify-center order-2 lg:order-1"
           >
-            <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-              About Me
+            <div className="inline-block rounded-full bg-secondary/50 backdrop-blur-sm px-4 py-1.5 text-sm font-medium text-foreground mb-8 w-fit border border-white/10">
+              Senior Software Engineer
+            </div>
+            <h1 className="font-serif text-5xl md:text-7xl font-medium tracking-tight text-foreground leading-[1.1] mb-8">
+              About <span className="text-muted-foreground italic">Me.</span>
             </h1>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              I&apos;m Ronak Patel, a Senior Software Engineer with over 8 years of experience
-              building scalable web applications and leading development teams. I&apos;m passionate
-              about creating elegant solutions to complex problems and staying at the forefront 
-              of technology trends.
-            </p>
-            <p className="mt-6 text-lg leading-8 text-muted-foreground">
-              My journey in software development began with a Computer Science degree, 
-              where I developed a strong foundation in algorithms, data structures, and 
-              software architecture. Since then, I&apos;ve had the privilege of working with
-              startups and Fortune 500 companies, helping them build products that serve 
-              millions of users.
-            </p>
-            <div className="mt-8 flex flex-col space-y-4">
-              <div className="flex items-center text-muted-foreground">
-                <MapPin className="h-5 w-5 mr-2" />
-                <span>San Francisco, CA</span>
+            <div className="space-y-6 text-lg leading-relaxed text-muted-foreground max-w-xl">
+              <p>
+                I&apos;m Ronak Patel, a Senior Software Engineer with over 8 years of experience
+                building scalable web applications and leading development teams.
+              </p>
+              <p>
+                I&apos;m passionate about creating elegant solutions to complex problems and staying at the forefront 
+                of technology trends. My journey began with a Computer Science degree and has led me to work with 
+                innovative startups and Fortune 500 companies.
+              </p>
+            </div>
+            
+            <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
+              <div className="flex flex-col items-center sm:items-start p-4 rounded-2xl bg-card/30 backdrop-blur-sm border border-white/5">
+                <MapPin className="h-6 w-6 mb-2 text-primary" />
+                <span className="font-medium text-foreground">San Francisco</span>
+                <span className="text-sm text-muted-foreground">Location</span>
               </div>
-              <div className="flex items-center text-muted-foreground">
-                <Calendar className="h-5 w-5 mr-2" />
-                <span>8+ years of experience</span>
+              <div className="flex flex-col items-center sm:items-start p-4 rounded-2xl bg-card/30 backdrop-blur-sm border border-white/5">
+                <Calendar className="h-6 w-6 mb-2 text-primary" />
+                <span className="font-medium text-foreground">8+ Years</span>
+                <span className="text-sm text-muted-foreground">Experience</span>
               </div>
-              <div className="flex items-center text-muted-foreground">
-                <Award className="h-5 w-5 mr-2" />
-                <span>Certified ReactJS Developer</span>
+              <div className="flex flex-col items-center sm:items-start p-4 rounded-2xl bg-card/30 backdrop-blur-sm border border-white/5">
+                <Award className="h-6 w-6 mb-2 text-primary" />
+                <span className="font-medium text-foreground">Certified</span>
+                <span className="text-sm text-muted-foreground">React Developer</span>
               </div>
             </div>
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex justify-center lg:justify-end"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="relative lg:h-[600px] flex items-center justify-center order-1 lg:order-2"
           >
-            <div className="relative">
-              <div className="relative h-96 w-80 overflow-hidden rounded-3xl shadow-2xl border-4 border-background">
+            <div className="relative w-full max-w-md aspect-[4/5]">
+              <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-tr from-primary/20 to-secondary/20 rotate-6 blur-2xl opacity-60" />
+              <div className="relative h-full w-full overflow-hidden rounded-[2rem] border border-white/10 shadow-2xl">
                 <Image
                   src="/profile.jpg"
                   alt="Ronak Patel"
                   fill
-                  className="object-cover object-center scale-105 hover:scale-110 transition-transform duration-300"
+                  className="object-cover object-center scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority
                 />
-                {/* Gradient overlay for better visual appeal */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               </div>
-              {/* Enhanced decorative elements */}
-              <div className="absolute -top-6 -right-6 h-80 w-72 rounded-3xl bg-gradient-to-br from-primary/20 to-primary/5 -z-10 blur-sm" />
-              {/* <div className="absolute -bottom-6 -left-6 h-80 w-72 rounded-3xl bg-gradient-to-tr from-secondary/30 to-secondary/10 -z-10 blur-sm" /> */}
-              {/* Additional accent element */}
-              <div className="absolute top-4 right-4 h-4 w-4 rounded-full bg-primary/60 animate-pulse" />
+              
+              {/* Floating elements */}
+              <motion.div 
+                animate={{ y: [0, -10, 0] }}
+                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                className="absolute -bottom-8 -left-8 p-6 rounded-2xl bg-card/80 backdrop-blur-md border border-white/10 shadow-xl hidden md:block"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="h-3 w-3 rounded-full bg-green-500 animate-pulse" />
+                  <span className="font-medium">Open to opportunities</span>
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>

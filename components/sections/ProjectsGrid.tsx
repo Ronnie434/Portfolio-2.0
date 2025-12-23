@@ -132,17 +132,17 @@ export function ProjectsGrid() {
   }
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-12">
       {/* Filter buttons */}
-      <div className="flex flex-wrap gap-2 justify-center">
+      <div className="flex flex-wrap gap-3 justify-center">
         {categories.map((category) => (
           <button
             key={category}
             onClick={() => handleCategoryChange(category)}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+            className={`px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
               selectedCategory === category
-                ? 'bg-primary text-primary-foreground'
-                : 'bg-secondary text-secondary-foreground hover:bg-secondary/80'
+                ? 'bg-primary text-primary-foreground shadow-lg scale-105'
+                : 'bg-secondary/50 text-secondary-foreground hover:bg-secondary hover:scale-105 backdrop-blur-sm'
             }`}
           >
             {category}
@@ -151,25 +151,27 @@ export function ProjectsGrid() {
       </div>
 
       {/* Projects grid */}
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {filteredProjects.map((project, index) => (
           <motion.div
             key={project.id}
+            layout
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group rounded-lg border bg-card p-6 shadow-sm hover:shadow-md transition-shadow"
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 0.4, delay: index * 0.05 }}
+            className="group relative flex flex-col rounded-xl border border-white/10 bg-card/40 backdrop-blur-sm p-6 shadow-sm transition-all duration-500 hover:shadow-xl hover:-translate-y-2 hover:bg-card/60"
           >
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="text-xl font-semibold text-card-foreground">
+            <div className="flex items-start justify-between mb-4">
+              <h3 className="font-serif text-2xl font-medium tracking-tight text-foreground group-hover:text-primary transition-colors">
                 {project.title}
               </h3>
-              <div className="flex space-x-2">
+              <div className="flex space-x-3 opacity-70 group-hover:opacity-100 transition-opacity">
                 <Link
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
+                  className="p-2 rounded-full hover:bg-white/10 transition-colors"
                   aria-label="View source code"
                 >
                   <Github className="h-5 w-5" />
@@ -179,7 +181,7 @@ export function ProjectsGrid() {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
+                    className="p-2 rounded-full hover:bg-white/10 transition-colors"
                     aria-label="View live demo"
                   >
                     <ExternalLink className="h-5 w-5" />
@@ -188,15 +190,15 @@ export function ProjectsGrid() {
               </div>
             </div>
             
-            <p className="text-muted-foreground mb-4">
+            <p className="text-muted-foreground mb-6 flex-grow leading-relaxed">
               {project.description}
             </p>
             
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 mt-auto">
               {project.tech.map((tech) => (
                 <span
                   key={tech}
-                  className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground"
+                  className="inline-flex items-center rounded-full bg-secondary/50 px-3 py-1 text-xs font-medium text-secondary-foreground border border-white/5 transition-colors group-hover:bg-secondary"
                 >
                   {tech}
                 </span>
@@ -207,10 +209,13 @@ export function ProjectsGrid() {
       </div>
 
       {filteredProjects.length === 0 && (
-        <div className="text-center py-12">
-          <Filter className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-          <p className="text-muted-foreground">
-            No projects found for the selected category.
+        <div className="text-center py-20">
+          <div className="inline-flex h-20 w-20 items-center justify-center rounded-full bg-secondary/30 mb-6">
+             <Filter className="h-10 w-10 text-muted-foreground" />
+          </div>
+          <h3 className="font-serif text-2xl font-medium text-foreground mb-2">No projects found</h3>
+          <p className="text-muted-foreground max-w-md mx-auto">
+            Try selecting a different category or view all projects.
           </p>
         </div>
       )}

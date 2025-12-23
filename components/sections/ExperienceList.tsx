@@ -69,7 +69,7 @@ const achievements = [
 
 export function ExperienceList() {
   return (
-    <div className="space-y-16">
+    <div className="space-y-24">
       {/* Achievements */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {achievements.map((achievement, index) => (
@@ -79,12 +79,12 @@ export function ExperienceList() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="text-center p-6 rounded-lg border bg-card"
+            className="text-center p-8 rounded-2xl border border-white/10 bg-card/40 backdrop-blur-sm shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
           >
-            <div className="text-3xl font-bold text-primary mb-2">
+            <div className="text-4xl md:text-5xl font-serif font-bold text-foreground mb-2">
               {achievement.metric}
             </div>
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground uppercase tracking-wider font-medium">
               {achievement.description}
             </p>
           </motion.div>
@@ -92,44 +92,52 @@ export function ExperienceList() {
       </div>
 
       {/* Experience List */}
-      <div className="space-y-8">
+      <div className="relative space-y-12">
+        {/* Timeline Line */}
+        <div className="absolute left-8 top-4 bottom-4 w-px bg-gradient-to-b from-border/0 via-border to-border/0 hidden md:block" />
+        
         {experiences.map((experience, index) => (
           <motion.div
             key={experience.id}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="rounded-lg border bg-card p-6 shadow-sm hover:shadow-md transition-shadow"
+            className="relative pl-0 md:pl-24"
           >
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
-              <div>
-                <h3 className="text-xl font-semibold text-card-foreground">
-                  {experience.position}
-                </h3>
-                <p className="text-lg text-primary font-medium">
-                  {experience.company}
-                </p>
-              </div>
-              <div className="flex items-center text-muted-foreground mt-2 lg:mt-0">
-                <CalendarDays className="h-4 w-4 mr-1" />
-                <span className="text-sm">{experience.duration}</span>
-              </div>
-            </div>
+            {/* Timeline Dot */}
+            <div className="absolute left-8 top-8 w-3 h-3 rounded-full bg-primary border-4 border-background -ml-[5.5px] hidden md:block z-10" />
             
-            <p className="text-muted-foreground mb-4">
-              {experience.description}
-            </p>
-            
-            <div className="flex flex-wrap gap-2">
-              {experience.tech.map((tech) => (
-                <span
-                  key={tech}
-                  className="inline-flex items-center rounded-full bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground"
-                >
-                  {tech}
-                </span>
-              ))}
+            <div className="rounded-2xl border border-white/10 bg-card/40 backdrop-blur-sm p-8 shadow-sm hover:shadow-lg transition-shadow group">
+              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                <div>
+                  <h3 className="text-2xl font-serif font-medium text-foreground group-hover:text-primary transition-colors">
+                    {experience.position}
+                  </h3>
+                  <p className="text-lg text-muted-foreground mt-1">
+                    {experience.company}
+                  </p>
+                </div>
+                <div className="flex items-center text-sm font-medium text-muted-foreground/80 bg-secondary/50 px-3 py-1 rounded-full mt-4 lg:mt-0 w-fit">
+                  <CalendarDays className="h-4 w-4 mr-2" />
+                  <span>{experience.duration}</span>
+                </div>
+              </div>
+              
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                {experience.description}
+              </p>
+              
+              <div className="flex flex-wrap gap-2">
+                {experience.tech.map((tech) => (
+                  <span
+                    key={tech}
+                    className="inline-flex items-center rounded-full bg-secondary/30 px-3 py-1 text-xs font-medium text-secondary-foreground border border-white/5"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
           </motion.div>
         ))}
@@ -141,24 +149,24 @@ export function ExperienceList() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         viewport={{ once: true }}
-        className="text-center"
+        className="mt-20"
       >
-        <div className="rounded-lg border bg-card p-8">
-          <h3 className="text-2xl font-semibold text-card-foreground mb-4">
+        <div className="rounded-2xl border border-white/10 bg-gradient-to-br from-card/40 to-background p-10 backdrop-blur-sm text-center">
+          <h3 className="text-3xl font-serif font-medium text-foreground mb-8">
             Key Strengths
           </h3>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <div className="flex items-center justify-center p-4 rounded-lg bg-secondary">
-              <Users className="h-5 w-5 text-primary mr-2" />
-              <span className="text-sm font-medium">React.js, Next.js, & Frontend</span>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="flex items-center justify-center p-6 rounded-xl bg-secondary/20 border border-white/5 hover:bg-secondary/40 transition-colors">
+              <Users className="h-6 w-6 text-primary mr-3" />
+              <span className="text-base font-medium">React.js, Next.js Ecosystem</span>
             </div>
-            <div className="flex items-center justify-center p-4 rounded-lg bg-secondary">
-              <TrendingUp className="h-5 w-5 text-primary mr-2" />
-              <span className="text-sm font-medium">Cross-browser Compatibility</span>
+            <div className="flex items-center justify-center p-6 rounded-xl bg-secondary/20 border border-white/5 hover:bg-secondary/40 transition-colors">
+              <TrendingUp className="h-6 w-6 text-primary mr-3" />
+              <span className="text-base font-medium">Performance Optimization</span>
             </div>
-            <div className="flex items-center justify-center p-4 rounded-lg bg-secondary">
-              <MapPin className="h-5 w-5 text-primary mr-2" />
-              <span className="text-sm font-medium">Responsive Design</span>
+            <div className="flex items-center justify-center p-6 rounded-xl bg-secondary/20 border border-white/5 hover:bg-secondary/40 transition-colors">
+              <MapPin className="h-6 w-6 text-primary mr-3" />
+              <span className="text-base font-medium">Responsive & Accessible UI</span>
             </div>
           </div>
         </div>

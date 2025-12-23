@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { BlogPost } from '@/components/sections/BlogPost'
 import { getBlogPost as getBlogPostFromSupabase } from '@/lib/blog-supabase'
-import { getFallbackBlogPostMeta } from '@/lib/blog-data-minimal'
+import { getFallbackBlogPost, getFallbackBlogPostMeta } from '@/lib/blog-data-minimal'
 
 // Force dynamic rendering to prevent build-time static generation
 export const dynamic = 'force-dynamic'
@@ -37,7 +37,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   
   let post = null
   
-  // Try to use Supabase first
+  // Try to use Supabase first if env vars exist
   if (supabaseUrl && supabaseAnonKey) {
     try {
       post = await getBlogPostFromSupabase(params.slug)
@@ -46,15 +46,25 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     }
   }
   
-  // If no post found and we don't have Supabase, show not found
-  // Individual blog posts require full content which is only in database
+  // If no post found from Supabase (or connection failed), try fallback data
   if (!post) {
-    console.log(`Blog post '${params.slug}' not found in database`)
+    console.log(`Supabase fetch failed or returned null for '${params.slug}', trying fallback...`)
+    const fallbackPost = getFallbackBlogPost(params.slug)
+    
+    if (fallbackPost) {
+      console.log(`Using fallback content for '${params.slug}'`)
+      post = fallbackPost
+    }
+  }
+  
+  // If still no post, show 404
+  if (!post) {
+    console.log(`Blog post '${params.slug}' not found in database or fallback`)
     notFound()
   }
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background pt-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <BlogPost post={post} />
       </div>

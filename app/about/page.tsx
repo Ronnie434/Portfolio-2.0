@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function About() {
   return (
-    <div className="space-y-16">
+    <div className="pt-32 space-y-16">
       <AboutHero />
       <Skills />
       <Timeline />

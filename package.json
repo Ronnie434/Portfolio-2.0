@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/playfair-display": "^5.2.8",
+    "@fontsource/space-grotesk": "^5.2.10",
     "@supabase/supabase-js": "^2.50.3",
     "@types/prismjs": "^1.26.5",
     "autoprefixer": "^10.4.16",
