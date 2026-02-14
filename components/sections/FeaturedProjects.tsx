@@ -20,8 +20,8 @@ const featuredProjects = [
     title: "Investment Portfolio Tracker",
     description: "Comprehensive investment portfolio tracker that fetches and displays Robinhood personal investment data including stocks, options, dividends, and advanced analytics with real-time monitoring.",
     tech: ["Next.js", "TypeScript", "Node.js", "Python", "PostgreSQL", "Redis", "Prisma"],
-    github: "https://github.com/Ronnie434/Investment-Portfolio-Tracker",
-    live: "https://investment-portfolio-tracker-9psu71pkb.vercel.app",
+    github: "https://github.com/Ronnie434/IPT",
+    live: "https://ipt-gilt.vercel.app",
     featured: true
   },
   {
