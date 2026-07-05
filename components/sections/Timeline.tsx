@@ -6,10 +6,18 @@ import { GraduationCap, Briefcase, Award, Users } from 'lucide-react'
 
 const timelineEvents = [
   {
-    year: "2020",
+    year: "2026",
+    title: "Senior Software Engineer",
+    company: "Uare.ai",
+    description: "Building the Individual AI platform — personal AI that thinks, speaks, and evolves like you. Leading frontend architecture across Build, Chat, and Discover with Next.js, React, LLM APIs, and Stripe.",
+    icon: Users,
+    type: "work"
+  },
+  {
+    year: "2020 - 2026",
     title: "Senior Software Engineer",
     company: "Apple Inc.",
-    description: "Leading a team of 6 engineers, Next.js Developer, and mentoring junior developers.",
+    description: "Led a team of 6 engineers as a Next.js developer, architecting scalable solutions and mentoring junior developers.",
     icon: Users,
     type: "work"
   },

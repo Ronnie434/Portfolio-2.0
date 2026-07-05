@@ -7,11 +7,28 @@ import type { Experience } from '@/types'
 
 const experiences: Experience[] = [
   {
+    id: "0",
+    company: "Uare.ai",
+    position: "Senior Software Engineer",
+    duration: "Jan 2026 - Present",
+    description: "Building Uare.ai's Individual AI platform — \"Authentic, not Artificial\" personal AI that thinks, speaks, and evolves like you. Leading frontend architecture across the Build, Chat, and Discover experiences that turn a person's stories, voice, and knowledge into an evolving Human Life Model.",
+    highlights: [
+      "Spearheading the component-driven frontend with Next.js, React, and TypeScript, applying SSR/ISR rendering strategies to achieve sub-second page loads and strong Core Web Vitals across the Build, Chat, and Discover experiences.",
+      "Developed AI-powered features leveraging LLM APIs to power each user's Human Life Model — individualized reasoning and voice-authentic responses grounded in their own stories, values, and decisions across seven dimensions of life.",
+      "Engineered a browser-based voice-capture pipeline that turns a short 32-second memo into a personalized voice, preserving each user's tone, emotion, and personality.",
+      "Built multi-source data ingestion and OAuth integrations (documents, videos, images, social, and website connectors) that continuously train each user's model, with robust error handling and rate-limit resilience.",
+      "Integrated Stripe payment processing (subscriptions, one-time purchases, and webhook handling) to power creator monetization, revenue sharing, and customer lifecycle management.",
+      "Designed and built a responsive, accessible UI with Tailwind CSS supporting complex workflows — bulk knowledge uploads, the Human Life Model dashboard, and the Discover community feed.",
+      "Implemented CI/CD pipelines with GitHub Actions and Docker, streamlining deployments and reducing release cycles from days to hours."
+    ],
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js", "LLM APIs", "Stripe", "Docker", "GitHub Actions", "OAuth", "REST APIs"]
+  },
+  {
     id: "1",
     company: "Apple Inc.",
     position: "Senior Software Engineer",
-    duration: "2020 - Present",
-    description: "Leading a team of 6 engineers, specializing in Next.js development, and mentoring junior developers. Architecting scalable solutions and implementing best practices for modern web applications.",
+    duration: "2020 - Jan 2026",
+    description: "Led a team of 6 engineers, specializing in Next.js development, and mentoring junior developers. Architected scalable solutions and implemented best practices for modern web applications.",
     tech: ["Next.js", "React", "TypeScript", "Node.js", "AWS", "Docker", "Kubernetes", "MongoDB"]
   },
   {
@@ -54,7 +71,7 @@ const achievements = [
     description: "Years of professional experience"
   },
   {
-    metric: "5+",
+    metric: "6+",
     description: "Companies worked with"
   },
   {
@@ -127,7 +144,18 @@ export function ExperienceList() {
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 {experience.description}
               </p>
-              
+
+              {experience.highlights && experience.highlights.length > 0 && (
+                <ul className="mb-6 space-y-3">
+                  {experience.highlights.map((highlight, i) => (
+                    <li key={i} className="flex text-muted-foreground leading-relaxed">
+                      <span className="mr-3 mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-primary/70" />
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
               <div className="flex flex-wrap gap-2">
                 {experience.tech.map((tech) => (
                   <span
