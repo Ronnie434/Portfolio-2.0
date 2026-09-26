@@ -8,58 +8,58 @@ import { ExternalLink, Github, Filter } from 'lucide-react'
 import type { Project } from '@/types'
 
 const projects: Project[] = [
-    {
-      id: "1",
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with Next.js, Stripe integration, and microservices architecture. Features include real-time inventory, admin dashboard, and mobile-responsive design.",
-      tech: ["Next.js", "TypeScript", "Node.js", "MongoDB", "Stripe"],
-      github: "https://github.com/Ronnie434/ecommerce-platform",
-      // live: "https://ecommerce-demo.ronakpatel.dev",
-      featured: true
-    },
-    {
-      id: "2",
-      title: "Investment Portfolio Tracker",
-      description: "Comprehensive investment portfolio tracker that fetches and displays Robinhood personal investment data including stocks, options, dividends, and advanced analytics with real-time monitoring.",
-      tech: ["Next.js", "TypeScript", "Node.js", "Python", "PostgreSQL", "Redis", "Prisma"],
-      github: "https://github.com/Ronnie434/IPT",
-      live: "https://ipt-gilt.vercel.app",
-      featured: true
-    },
-    {
-      id: "3",
-      title: "AI Content Generator",
-      description: "SaaS application that generates marketing content using OpenAI API. Features include user authentication, subscription management, and content optimization.",
-      tech: ["Next.js", "Prisma", "OpenAI", "Stripe", "PostgreSQL"],
-      github: "https://github.com/Ronnie434/AI-Content-Generator",
-      // live: "https://ai-content.ronakpatel.dev",
-      featured: true
-    },
-    {
-      id: "9",
-      title: "Renvo",
-      description: "Smart expense tracker with monthly summaries, renewal reminders, analytics dashboard, and synchronized data across devices via Supabase.",
-      tech: ["React Native", "Expo", "TypeScript", "Supabase", "Push Notifications", "iOS", "Android"],
-      github: "https://github.com/Ronnie434/The-Renvo",
-      live: "https://therenvo.com",
-      featured: true
-    },
   {
-    id: "4",
-    title: "Task Management API",
-    description: "RESTful API for task management with authentication, real-time updates, and team collaboration features. Built with Node.js and MongoDB.",
-    tech: ["Node.js", "Express", "MongoDB", "JWT", "Socket.io"],
-    github: "https://github.com/Ronnie434/Task-Mangement-API",
+    id: "10",
+    title: "OfferBee.ai",
+    description: "Credit card rewards and perks tracker that connects to your cards through Plaid, tracks every statement credit, reminds you before they reset, and tells you which card to swipe wherever you are. Includes Bee, an AI assistant that answers with your real wallet data.",
+    tech: ["Next.js", "React Native", "Expo", "TypeScript", "Convex", "Plaid", "AI SDK", "iOS", "Android"],
+    live: "https://offerbee.ai",
+    featured: true
+  },
+  {
+    id: "9",
+    title: "Renvo",
+    description: "Smart expense tracker with monthly summaries, renewal reminders, analytics dashboard, and synchronized data across devices via Supabase.",
+    tech: ["React Native", "Expo", "TypeScript", "Supabase", "Push Notifications", "iOS", "Android"],
+    github: "https://github.com/Ronnie434/The-Renvo",
+    live: "https://therenvo.com",
+    featured: true
+  },
+  {
+    id: "2",
+    title: "Investment Portfolio Tracker",
+    description: "Comprehensive investment portfolio tracker that fetches and displays Robinhood personal investment data including stocks, options, dividends, and advanced analytics with real-time monitoring.",
+    tech: ["Next.js", "TypeScript", "Node.js", "Python", "PostgreSQL", "Redis", "Prisma"],
+    github: "https://github.com/Ronnie434/IPT",
+    live: "https://ipt-gilt.vercel.app",
+    featured: true
+  },
+  {
+    id: "7",
+    title: "Asteron",
+    description: "An AI companion that remembers, tracks, and warns you about what's coming — before it becomes a problem. Stop getting surprised by life.",
+    tech: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+    github: "https://github.com/Ronnie434/AI-Companion",
+    live: "https://asteron.app",
     featured: false
   },
   {
-    id: "5",
-    title: "Real-time Chat App",
-    description: "WebSocket-based chat application with rooms, file sharing, and message history. Includes mobile-responsive design and push notifications.",
-    tech: ["React", "Socket.io", "Node.js", "Redis", "MongoDB"],
-    github: "https://github.com/Ronnie434/Real-time-chat-app",
-    // live: "https://chat-app.ronakpatel.dev",
-    featured: false
+    id: "3",
+    title: "AI Content Generator",
+    description: "SaaS application that generates marketing content using OpenAI API. Features include user authentication, subscription management, and content optimization.",
+    tech: ["Next.js", "Prisma", "OpenAI", "Stripe", "PostgreSQL"],
+    github: "https://github.com/Ronnie434/AI-Content-Generator",
+    // live: "https://ai-content.ronakpatel.dev",
+    featured: true
+  },
+  {
+    id: "1",
+    title: "E-Commerce Platform",
+    description: "Full-stack e-commerce solution with Next.js, Stripe integration, and microservices architecture. Features include real-time inventory, admin dashboard, and mobile-responsive design.",
+    tech: ["Next.js", "TypeScript", "Node.js", "MongoDB", "Stripe"],
+    github: "https://github.com/Ronnie434/ecommerce-platform",
+    // live: "https://ecommerce-demo.ronakpatel.dev",
+    featured: true
   },
   {
     id: "6",
@@ -70,12 +70,11 @@ const projects: Project[] = [
     featured: false
   },
   {
-    id: "7",
-    title: "Asteron",
-    description: "An AI companion that remembers, tracks, and warns you about what's coming — before it becomes a problem. Stop getting surprised by life.",
-    tech: ["React", "TypeScript", "Vite", "Tailwind CSS"],
-    github: "https://github.com/Ronnie434/AI-Companion",
-    live: "https://asteron.app",
+    id: "4",
+    title: "Task Management API",
+    description: "RESTful API for task management with authentication, real-time updates, and team collaboration features. Built with Node.js and MongoDB.",
+    tech: ["Node.js", "Express", "MongoDB", "JWT", "Socket.io"],
+    github: "https://github.com/Ronnie434/Task-Mangement-API",
     featured: false
   },
   {
@@ -167,15 +166,17 @@ export function ProjectsGrid() {
                 {project.title}
               </h3>
               <div className="flex space-x-3 opacity-70 group-hover:opacity-100 transition-opacity">
-                <Link
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full hover:bg-white/10 transition-colors"
-                  aria-label="View source code"
-                >
-                  <Github className="h-5 w-5" />
-                </Link>
+                {project.github && (
+                  <Link
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 rounded-full hover:bg-white/10 transition-colors"
+                    aria-label="View source code"
+                  >
+                    <Github className="h-5 w-5" />
+                  </Link>
+                )}
                 {project.live && (
                   <Link
                     href={project.live}
