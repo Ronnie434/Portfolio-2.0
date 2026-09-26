@@ -49,7 +49,7 @@ export function Hero() {
             </Link>
             <Link
               href="/contact"
-              className="inline-flex h-12 items-center justify-center rounded-full border border-input bg-background/50 backdrop-blur-sm px-8 font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
+              className="inline-flex h-12 items-center justify-center rounded-full border border-input bg-background/50 px-8 font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground"
             >
               Contact Me
             </Link>
