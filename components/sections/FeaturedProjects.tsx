@@ -8,11 +8,10 @@ import { ExternalLink, Github, ArrowRight } from 'lucide-react'
 const featuredProjects = [
   {
     id: "1",
-    title: "Renvo",
-    description: "Smart expense tracker with monthly summaries, renewal reminders, analytics dashboard, and synchronized data across devices via Supabase.",
-    tech: ["React Native", "Expo", "TypeScript", "Supabase", "Push Notifications", "iOS", "Android"],
-    github: "https://github.com/Ronnie434/The-Renvo",
-    live: "https://therenvo.com",
+    title: "OfferBee.ai",
+    description: "Credit card rewards and perks tracker that connects to your cards through Plaid, tracks every statement credit, reminds you before they reset, and tells you which card to swipe wherever you are. Includes Bee, an AI assistant that answers with your real wallet data.",
+    tech: ["Next.js", "React Native", "Expo", "TypeScript", "Convex", "Plaid", "AI SDK", "iOS", "Android"],
+    live: "https://offerbee.ai",
     featured: true
   },
   {
@@ -74,9 +73,11 @@ export function FeaturedProjects() {
                     ))}
                   </div>
                   <div className="flex gap-3 lg:hidden">
-                    <Link href={project.github} target="_blank" className="p-2 rounded-full hover:bg-accent transition-colors">
-                      <Github className="h-5 w-5" />
-                    </Link>
+                    {project.github && (
+                      <Link href={project.github} target="_blank" className="p-2 rounded-full hover:bg-accent transition-colors">
+                        <Github className="h-5 w-5" />
+                      </Link>
+                    )}
                     {project.live && (
                       <Link href={project.live} target="_blank" className="p-2 rounded-full hover:bg-accent transition-colors">
                         <ExternalLink className="h-5 w-5" />
@@ -102,13 +103,15 @@ export function FeaturedProjects() {
                       Visit Website <ArrowRight className="ml-1 h-3 w-3" />
                     </Link>
                   )}
-                  <Link 
-                    href={project.github} 
-                    target="_blank"
-                    className="inline-flex items-center text-sm font-medium hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-0.5"
-                  >
-                    View Source
-                  </Link>
+                  {project.github && (
+                    <Link
+                      href={project.github}
+                      target="_blank"
+                      className="inline-flex items-center text-sm font-medium hover:text-primary transition-colors border-b border-transparent hover:border-primary pb-0.5"
+                    >
+                      View Source
+                    </Link>
+                  )}
                 </div>
               </div>
               
