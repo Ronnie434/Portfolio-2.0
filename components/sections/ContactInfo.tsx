@@ -21,8 +21,8 @@ const contactMethods = [
   {
     icon: MapPin,
     label: "Location",
-    value: "Oakley, CA",
-    href: "https://maps.google.com/?q=Oakley,+CA"
+    value: "Fremont, CA",
+    href: "https://maps.google.com/?q=Fremont,+CA"
   },
   {
     icon: Calendar,
